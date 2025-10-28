@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
 :root {
     --primary-color: #1F4E79;
     --secondary-color: #333333;
@@ -12,8 +13,45 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+@view-transition {
+    navigation: auto
+}
+
+::view-transition-group(*) {
+    animation-duration:.5s;
+}
+
+::view-transition-old(root) {
+    animation: slide-out-to-left .5s forwards;
+}
+
+::view-transition-new(root) {
+    animation: slide-out-to-right .5s forwards;
+}
+
+@keyframes slide-out-to-left {
+    from {
+        transform: translateX(0);
+    } to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slide-out-to-right {
+    from {
+        transform: translateX(-100%);
+    } to {
+        transform: translateX(0);
+    }
+}
+
 body {
     font-family: 'Poppins', sans-serif;
+
 }
 
 header {
@@ -25,8 +63,12 @@ header {
     left: 0;
     top: 0;
     z-index: 10;
-    padding: 24px 115px;
+    padding: 32px 115px;
     background-color: var(--primary-color);
+
+    & a {
+        text-decoration: none;
+    }
 }
 
 .logo {
@@ -37,10 +79,15 @@ header {
     text-transform: uppercase;
 }
 
-header nav, .socials {
+header nav {
     display: flex;
-    gap: 1rem;
     color: white;
+}
+
+
+.socials {
+    display:flex;
+    gap: 1rem;
 }
 
 .socials a {
@@ -48,18 +95,9 @@ header nav, .socials {
     color: white;
 }
 
-
-
-header nav ul{
-    display: flex;
-    gap: 2rem;
-}
-
-header nav ul li {
+ .nav-item {
     list-style-type: none;
-}
-
-header nav ul li a {
+    padding: .75rem 1rem;
     text-decoration: none;
     color: white;
     font-weight: 600;
@@ -75,12 +113,55 @@ header nav ul li a {
     justify-content: center;
     gap: 2rem;
 
-    border-bottom: .25rem solid black;
+    position: relative;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+
+.hero-video video {
+    width: 100%;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 8%;
+  color: var(--acent-color);
+  animation: arrowMove 1.5s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & svg {
+    stroke-width: 3;
+  }
+}
+
+@keyframes arrowMove {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
 }
 
 .hero-title {
     font-size: 5rem;
     text-align: center;
+    color: white;
 }
 
 .hero-btn {
@@ -97,12 +178,13 @@ header nav ul li a {
     }
 }
 
-.about {
+#about {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 115px;
+    margin-top: 115px;
 }
 
 .about-container {
@@ -139,11 +221,19 @@ header nav ul li a {
 
 .about-img-container {
     background-color: #333333;
-    width: 100%;
+    width: 90%;
     height: 440px;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
-.services {
+#services {
     width: 100%;
     background-color: var(--primary-color);
     padding: 115px;
@@ -157,6 +247,7 @@ header nav ul li a {
     color: white;
     font-size: 2rem;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .services-container {
@@ -177,14 +268,24 @@ header nav ul li a {
     border-radius: 1.5rem;
 }
 
+.service-name {
+    text-align: center;
+}
+
 .img-container {
     width: 260px;
     height: 220px;
-    background-color: #8998A9;
     border-radius: 1rem;
+    overflow: hidden;
+    
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
-.projects {
+#projects {
     width: 100%;;
     padding: 115px;
     display: flex;
@@ -217,7 +318,12 @@ header nav ul li a {
 .project-img-container {
     width: 100%;
     height: 236px;
-    background-color: #D9D9D9;
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .info-project {
@@ -240,9 +346,6 @@ header nav ul li a {
     font-size: .75rem;
     border-radius: 1rem;
     transition: background-color 100ms ease-in;
-}
-
-.single-project-btn {
     background-color: var(--primary-color);
 
     &:hover {
@@ -250,15 +353,7 @@ header nav ul li a {
     }
 }
 
-.all-projects-btn {
-    background-color: var(--acent-color);
-
-    &:hover {
-        background-color: var(--primary-color);
-    }
-}
-
-.contact {
+#contact {
     width: 100%;
     display: flex;
     align-items: center;
@@ -357,7 +452,7 @@ footer {
     align-items: center;
     width: 100%;
     padding: 32px 115px;
-    margin-top: 2rem;
+    margin-top: 8rem;
     background-color: var(--primary-color);
 }
 

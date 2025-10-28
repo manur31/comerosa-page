@@ -3,80 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Comerosa Services SRL</title>
 </head>
 <body>
-     <header>
-        <h2>Comerosa Services SRL</h2>
+    <header>
+        <a href="#main">
+            <h2 class="logo">Comerosa <span>Services SRL</span></h2>
+        </a>
         <nav>
-            <ul>
-                <li>
-                    <a href="#">Inicio</a>
-                </li>
-                <li>
-                    <a href="#">Nosotros</a>
-                </li>
-                <li>
-                    <a href="#">Proyectos</a>
-                </li>
-                <li>
-                    <a href="#">Contacto</a>
-                </li>
-            </ul>
+            <a href="./index.html" class="nav-item active">Inicio</a>
+            <a href="./index.html#about" class="nav-item active">Nosotros</a>
+            <a href="./index.html#services" class="nav-item active">Servicios</a>
+            <a href="./index.html#projects" class="nav-item active">Proyectos</a>
+            <a href="./index.html#contact" class="nav-item active">Contacto</a>
         </nav>
-        <nav>
-            <div>Insta</div>
-            <div>Face</div>
+        <nav class="socials">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
         </nav>
     </header>
 
-    <main>
-        <section>
-            <article>
-                <h2>¿QUIENES SOMOS?</h2>
-                <p>
-                    Nos especializamos en construcciones metálicas, toldos, herrería decorativa y mantenimiento industrial. Ofrecemos soluciones personalizadas que combinan funcionalidad y diseño, asegurando estructuras seguras, resistentes y estéticamente atractivas para proyectos residenciales e industriales.
-                </p>
-                <p>
-                    Con un equipo experto y un enfoque en la calidad, brindamos servicios eficientes que se adaptan a las necesidades de cada cliente, garantizando resultados duraderos y un excelente servicio.
-                </p>
-            </article>
-            <article>
-                <div></div>
-                <div></div>
-                <div></div>
-            </article>
-        </section>
-        <section>
-            <article>
-                <h3>Mision</h3>
-                <p>
-                    Fabricamos estructuras que agregan valos, inovacion, belleza y proteccion a cada inmueble lo cual se traduce en 
-                </p>
-            </article>
-            <article>
-                <h3>Vision</h3>
-                <p>
-                    Ser la empresa de construcciones metálica mas completa, responsable y eficiente en República Dominicana.
-                </p>
-            </article>
-            <article>
-                <h3>VALORES</h3>
-                <p>
-                    Somos transparentes, responsables y priorizamos la seguridad. Fomentamos el respeto y trabajamos con pasión para garantizar calidad en todo lo que hacemos.
-                </p>
-            </article>
-
-        </section>
-    </main>
+    <main id="main"></main>
 
     <footer>
-        <h2>Comerosa Services SRL</h2>
+        <h2 class="logo">Comerosa <span>Services SRL</span></h2>
         <p>© 2025 Design by mnl.rosario</p>
-        <nav>
-            <div>Insta</div>
-            <div>Face</div>
+        <nav class="socials">
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
         </nav>
     </footer>
+
+    <script type="module" src="./js/script.js"></script>
 </body>
 </html>

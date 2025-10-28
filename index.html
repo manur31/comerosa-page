@@ -8,22 +8,15 @@
 </head>
 <body>
     <header>
-        <h2 class="logo">Comerosa <span>Services SRL</span></h2>
+        <a href="#main">
+            <h2 class="logo">Comerosa <span>Services SRL</span></h2>
+        </a>
         <nav>
-            <ul>
-                <li>
-                    <a href="#">Inicio</a>
-                </li>
-                <li>
-                    <a href="#">Nosotros</a>
-                </li>
-                <li>
-                    <a href="#">Proyectos</a>
-                </li>
-                <li>
-                    <a href="#">Contacto</a>
-                </li>
-            </ul>
+            <a href="#main" class="nav-item active">Inicio</a>
+            <a href="#about" class="nav-item active">Nosotros</a>
+            <a href="#services" class="nav-item active">Servicios</a>
+            <a href="#projects" class="nav-item active">Proyectos</a>
+            <a href="#contact" class="nav-item active">Contacto</a>
         </nav>
         <nav class="socials">
             <a href="#">
@@ -35,150 +28,45 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main">
         <section class="hero">
             <h1 class="hero-title">Su satisfacción es nuestra responsabilidad</h1>
-            <a href="#" class="hero-btn">Contactanos</a>
-        </section>
-
-        <section class="about">
-            <article class="about-container">
-                <h2 class="about-title">Sobre nosotros</h2>
-                <p class="about-description">Nos especializamos en construcciones metálicas, toldos, herrería decorativa y mantenimiento industrial. Ofrecemos soluciones personalizadas que combinan funcionalidad y diseño, asegurando estructuras seguras, resistentes y estéticamente atractivas para proyectos residenciales e industriales.</p>
-                <a href="#" class="about-btn">Conocer más</a>
-            </article>
-            <div class="about-img-container">
-                <img src="" alt="">
+            <a href="#contact" class="hero-btn">Contactanos</a>
+            <div class="arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-down"><polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/></svg>
+            </div>
+            <div class="hero-video">
+                <video src="./resouces/135851-764362075_small.mp4" autoplay loop></video>
             </div>
         </section>
 
-        <section class="services">
+        <section id="about">
+            <article class="about-container">
+                <h2 class="about-title">Sobre nosotros</h2>
+                <p class="about-description">Nos especializamos en construcciones metálicas, toldos, herrería decorativa y mantenimiento industrial. Ofrecemos soluciones personalizadas que combinan funcionalidad y diseño, asegurando estructuras seguras, resistentes y estéticamente atractivas para proyectos residenciales e industriales.</p>
+                <a href="./about.html" class="about-btn">Conocer más</a>
+            </article>
+            <div class="about-img-container">
+                <img src=".//resouces/images/stavan-macwan-jHIVc9lB1d4-unsplash.jpg" alt="">
+            </div>
+        </section>
+
+        <section id="services">
             <h2 class="services-title">Nuestros servicios</h2>
             <section class="services-container">
-                <article class="service-card">
-                    <div class="img-container">
-                        <img class="services-img" src="" alt="">
-                    </div>
-                    <h3 class="service-name">Nombre del servicio</h3>
-                </article>
-                <article class="service-card">
-                    <div class="img-container">
-                        <img class="services-img" src="" alt="">
-                    </div>
-                    <h3 class="service-name">Nombre del servicio</h3>
-                </article>
-                <article class="service-card">
-                    <div class="img-container">
-                        <img class="services-img" src="" alt="">
-                    </div>
-                    <h3 class="service-name">Nombre del servicio</h3>
-                </article>
-                <article class="service-card">
-                    <div class="img-container">
-                        <img class="services-img" src="" alt="">
-                    </div>
-                    <h3 class="service-name">Nombre del servicio</h3>
-                </article>
-                <article class="service-card">
-                    <div class="img-container">
-                        <img class="services-img" src="" alt="">
-                    </div>
-                    <h3 class="service-name">Nombre del servicio</h3>
-                </article>
-                <article class="service-card">
-                    <div class="img-container">
-                        <img class="services-img" src="" alt="">
-                    </div>
-                    <h3 class="service-name">Nombre del servicio</h3>
-                </article>
+                <!-- Esta parte esta generada con JS -->
             </section>
         </section>
 
-        <section class="projects">
+        <section id="projects">
             <h2 class="projects-title">Nuestros proyectos</h2>
             <section class="projects-container">
-                <article class="project-card">
-                    <div class="project-img-container">
-                        <img src="" alt="">
-                    </div>
-                    <section class="info-project">
-                        <h3 class="project-card-title">Nombre del proyecto</h3>
-                        <p class="project-card-description">Ofrecemos soluciones personalizadas que combinan funcionalidad y diseño, asegurando estructuras seguras, resistentes y estéticamente atractivas para proyectos residenciales e industriales.</p>
-                        <section class="project-card-btns-container">
-                            <a href="#" class="project-btn single-project-btn">Ver proyecto</a>
-                            <a href="#" class="project-btn all-projects-btn">Proyectos</a>
-                        </section>
-                    </section>
-                </article>
-                <article class="project-card">
-                    <div class="project-img-container">
-                        <img src="" alt="">
-                    </div>
-                    <section class="info-project">
-                        <h3 class="project-card-title">Nombre del proyecto</h3>
-                        <p class="project-card-description">Ofrecemos soluciones personalizadas que combinan funcionalidad y diseño, asegurando estructuras seguras, resistentes y estéticamente atractivas para proyectos residenciales e industriales.</p>
-                        <section class="project-card-btns-container">
-                            <a href="#" class="project-btn single-project-btn">Ver proyecto</a>
-                            <a href="#" class="project-btn all-projects-btn">Proyectos</a>
-                        </section>
-                    </section>
-                </article>
-                <article class="project-card">
-                    <div class="project-img-container">
-                        <img src="" alt="">
-                    </div>
-                    <section class="info-project">
-                        <h3 class="project-card-title">Nombre del proyecto</h3>
-                        <p class="project-card-description">Ofrecemos soluciones personalizadas que combinan funcionalidad y diseño, asegurando estructuras seguras, resistentes y estéticamente atractivas para proyectos residenciales e industriales.</p>
-                        <section class="project-card-btns-container">
-                            <a href="#" class="project-btn single-project-btn">Ver proyecto</a>
-                            <a href="#" class="project-btn all-projects-btn">Proyectos</a>
-                        </section>
-                    </section>
-                </article>
-                <article class="project-card">
-                    <div class="project-img-container">
-                        <img src="" alt="">
-                    </div>
-                    <section class="info-project">
-                        <h3 class="project-card-title">Nombre del proyecto</h3>
-                        <p class="project-card-description">Ofrecemos soluciones personalizadas que combinan funcionalidad y diseño, asegurando estructuras seguras, resistentes y estéticamente atractivas para proyectos residenciales e industriales.</p>
-                        <section class="project-card-btns-container">
-                            <a href="#" class="project-btn single-project-btn">Ver proyecto</a>
-                            <a href="#" class="project-btn all-projects-btn">Proyectos</a>
-                        </section>
-                    </section>
-                </article>
-                <article class="project-card">
-                    <div class="project-img-container">
-                        <img src="" alt="">
-                    </div>
-                    <section class="info-project">
-                        <h3 class="project-card-title">Nombre del proyecto</h3>
-                        <p class="project-card-description">Ofrecemos soluciones personalizadas que combinan funcionalidad y diseño, asegurando estructuras seguras, resistentes y estéticamente atractivas para proyectos residenciales e industriales.</p>
-                        <section class="project-card-btns-container">
-                            <a href="#" class="project-btn single-project-btn">Ver proyecto</a>
-                            <a href="#" class="project-btn all-projects-btn">Proyectos</a>
-                        </section>
-                    </section>
-                </article>
-                <article class="project-card">
-                    <div class="project-img-container">
-                        <img src="" alt="">
-                    </div>
-                    <section class="info-project">
-                        <h3 class="project-card-title">Nombre del proyecto</h3>
-                        <p class="project-card-description">Ofrecemos soluciones personalizadas que combinan funcionalidad y diseño, asegurando estructuras seguras, resistentes y estéticamente atractivas para proyectos residenciales e industriales.</p>
-                        <section class="project-card-btns-container">
-                            <a href="#" class="project-btn single-project-btn">Ver proyecto</a>
-                            <a href="#" class="project-btn all-projects-btn">Proyectos</a>
-                        </section>
-                    </section>
-                </article>
+                <!-- Esta parte esta generada con JS -->
             </section>
+
         </section>
 
-        <section class="contact">
+        <section id="contact">
             <article class="contact-info">
                 <h2>Contactenos</h2>
                 <ul >
@@ -239,5 +127,7 @@
             </a>
         </nav>
     </footer>
+
+    <script type="module" src="./js/script.js"></script>
 </body>
 </html>
