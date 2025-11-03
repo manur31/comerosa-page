@@ -9,6 +9,8 @@ export const projects = [
     images: [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
       "https://images.unsplash.com/photo-1598300053650-3b3b19b8d95d",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "https://images.unsplash.com/photo-1581091012184-7b1f9e7fd1a9",
     ],
   },
   {
@@ -21,6 +23,8 @@ export const projects = [
     images: [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
       "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "https://images.unsplash.com/photo-1581091012184-7b1f9e7fd1a9",
     ],
   },
   {
@@ -33,6 +37,8 @@ export const projects = [
     images: [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
       "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "https://images.unsplash.com/photo-1581091012184-7b1f9e7fd1a9",
     ],
   },
   {
@@ -45,6 +51,8 @@ export const projects = [
     images: [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
       "https://images.unsplash.com/photo-1604076913837-52ab5629fba9",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "https://images.unsplash.com/photo-1581091012184-7b1f9e7fd1a9",
     ],
   },
   {
@@ -57,6 +65,8 @@ export const projects = [
     images: [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
       "https://images.unsplash.com/photo-1604079627234-dfdf00b7a20e",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "https://images.unsplash.com/photo-1581091012184-7b1f9e7fd1a9",
     ],
   },
   {
@@ -67,6 +77,8 @@ export const projects = [
       "Proveemos lubricantes industriales de marcas reconocidas, adecuados para equipos de alto rendimiento. Nuestros productos garantizan menor fricción, mayor durabilidad y reducción de costos por mantenimiento. Ofrecemos asesoría para elegir el lubricante ideal según la operación.",
     categoria: "Venta de lubricantes industriales",
     images: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "https://images.unsplash.com/photo-1581091012184-7b1f9e7fd1a9",
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
       "https://images.unsplash.com/photo-1581091012184-7b1f9e7fd1a9",
     ],
