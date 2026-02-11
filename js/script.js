@@ -41,7 +41,6 @@ projects.forEach(project => {
 let lastScrollY = 0;
 
 window.addEventListener('scroll', () => {
-    console.log('hola')
     let currentScrollY = window.scrollY
 
     if (currentScrollY > 1) {

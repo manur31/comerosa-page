@@ -2,7 +2,6 @@
 
 @import './animation.css';
 
-
 :root {
     --primary-color: #1F4E79;
     --secondary-color: #333333;
@@ -17,22 +16,25 @@
 
 html {
     scroll-behavior: smooth;
+    background-color: white;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-
+    overflow-x: hidden;
 }
+
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: auto;
     width: 100%;
     position: fixed;
     top: 0;
     z-index: 10;
-    padding: 32px 115px;
+    padding: min(32px, 5vw) min(115px, 10vw);
     background-color: transparent;
 
     transition: all .3s ease;
@@ -50,10 +52,16 @@ header {
     &.stuck {
         top: 0;
         background: var(--primary-color);
-        padding: 8px 115px;
+        padding: min(12px, 5vw) min(115px, 10vw);
         box-shadow: 0 4px 10px rgba(0,0,0,.5);
         opacity: 1;
         transition: all .3s ease;
+    }
+
+    @media (max-width: 576px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
@@ -67,13 +75,16 @@ header {
 }
 
 header nav {
-    display: flex;
+    display: flex; 
     color: white;
+    
+    @media (max-width: 576px) {
+        display: none;
+    }
 }
 
-
 .socials {
-    display:flex;
+    display: flex;
     gap: 1rem;
 }
 
@@ -83,6 +94,10 @@ header nav {
 
     &:hover {
         color: var(--acent-color);
+    }
+
+    @media (max-width: 576px) {
+        display: none;
     }
 }
 
@@ -100,12 +115,23 @@ header nav {
     } 
 }
 
-
+.mobile-menu-btn {
+    display: none;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    
+    @media (max-width: 576px) {
+        display: block;
+    }
+}
 
 .hero {
+    height: 100dvh;
     height: 100vh;
     width: 100%;
-    padding: 0 115px;
+    padding: 0 min(115px, 10vw);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,6 +139,11 @@ header nav {
     gap: 2rem;
 
     position: relative;
+
+    @media (max-width: 768px) {
+        padding: 0 min(24px, 5vw);
+        height: 145vh;
+    }
 }
 
 .hero-video {
@@ -126,6 +157,12 @@ header nav {
 
 .hero-video video {
     width: 100%;
+
+    @media (max-width: 768px) {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
 }
 
 .arrow {
@@ -140,10 +177,23 @@ header nav {
   & svg {
     stroke-width: 3;
   }
+
+  & a {
+    text-decoration: none;
+    color: var(--acent-color);
+
+    &:hover {
+        animation: none;
+    }
+  }
+
+  @media (max-width: 576px) {
+    bottom: 12%;
+  }
 }
 
 .hero-title {
-    font-size: 5rem;
+    font-size: clamp(2rem, calc(2rem + 2vw), 5rem);
     text-align: center;
     color: white;
 }
@@ -164,44 +214,75 @@ header nav {
 
 #about {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 115px;
-    margin-top: 115px;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-container {
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: min(115px, 10vw);
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.about-info-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-
+    gap: 1.5rem;
+    width: 95%;
     view-timeline-name: --reveal;
     animation-name: showLeft;
     animation-fill-mode: both;
     animation-timeline: --reveal;
     animation-range: entry 25% cover 50%;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+
+        animation-name: show;
+    }
 }
 
 .about-title {
     color: var(--primary-color);
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
     text-transform: uppercase;
+    line-height: 1;
 }
 
 .about-description {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    line-height: 1.6;
+    padding-right: 1.5rem;
+    
+    @media (max-width: 768px) {
+        padding-right: 0;
+        font-weight: 500;
+        line-height: 1.5;
+        word-spacing: 1px;
+        letter-spacing: 0.5px;
+    }
 }
 
 .about-btn {
     width: fit-content;
-    padding: 20px 38px;
+    padding: min(16px, 2vw) min(24px, 3vw);
     background-color: var(--primary-color);
     text-decoration: none;
     color: white;
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
     border-radius: 1rem;
     transition: background-color 100ms ease-in;
 
@@ -212,8 +293,8 @@ header nav {
 
 .about-img-container {
     background-color: #333333;
-    width: 90%;
-    height: 440px;
+    width: 80%;
+    height: 360px;
     border-radius: 1rem;
     overflow: hidden;
 
@@ -227,6 +308,7 @@ header nav {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
     }
 
 }
@@ -234,23 +316,25 @@ header nav {
 #services {
     width: 100%;
     background-color: var(--primary-color);
-    padding: 115px;
+    padding: min(60px, 14vw) min(115px, 5vw);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5rem;
+    gap: min(3rem, 12vw);
 }
 
 .services-title {
     color: white;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
     text-transform: uppercase;
     text-align: center;
 }
 
 .services-container {
+    width: min(1200px, 100%);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
 }
 
@@ -260,8 +344,10 @@ header nav {
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    width: 337px;
-    height: 345px;
+    width: min(337px, 100%);
+    height: fit-content;
+    padding: min(2rem, 5vw) min(1.5rem, 2vw);
+    margin: 0 auto;
     background-color: #D9D9D9;
     border-radius: 1.5rem;
 
@@ -275,6 +361,7 @@ header nav {
 
 .service-name {
     text-align: center;
+    font-size: clamp(1rem, 1.5vw, 1rem);
 }
 
 .img-container {
@@ -291,12 +378,12 @@ header nav {
 }
 
 #projects {
-    width: 100%;;
-    padding: 115px;
+    width: 100%;
+    padding: min(60px, 14vw) min(115px, 5vw);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5rem;
+    gap: min(3rem, 12vw);
     background-color: white;
 }
 
@@ -307,8 +394,10 @@ header nav {
 }
 
 .projects-container {
+    width: min(1200px, 100%);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
 }
 
@@ -318,6 +407,7 @@ header nav {
     flex-direction: column;
     border-radius: 1rem;
     overflow: hidden;
+    margin: 0 auto;
     box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
 
     view-timeline-name: --reveal;
@@ -366,6 +456,15 @@ header nav {
 }
 
 #contact {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.contact-container {
     width: 100%;
     display: flex;
     align-items: center;
@@ -383,7 +482,7 @@ header nav {
     padding: 5rem;
     border-radius: 1.25rem;
     position: absolute;
-    left: 16%;
+    left: 10%;
     
     color: white;
     background-color: var(--secondary-color);
@@ -453,7 +552,10 @@ header nav {
     height: 130px;
 }
 
-.contact-form button {
+#submitBtn {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
     width: fit-content;
     padding: 1rem 3rem;
     background-color: var(--acent-color);
@@ -471,19 +573,101 @@ header nav {
     }
 }
 
+.spinner {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.chatBtn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    border-radius: 100%;
+    z-index: 9999999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & a {
+        width: 48px;
+        height: 48px;
+        padding: 12px;
+        background-color: #49c959;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.chatBtn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-color: #49c959;
+    box-shadow: 0 0 1px 1px rgba(73, 201, 89, .8);
+    z-index: -1;
+
+    animation: pulse-animation 2.5s ease-in-out 2.5s infinite;
+}
+.chatBtn::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-color: #49c959;
+    box-shadow: 0 0 1px 1px rgba(73, 201, 89, .8);  
+    z-index: -1;
+
+    animation: pulse-animation 2.5s ease-in-out 2s infinite;
+}
+
+
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 32px 115px;
+    padding: min(32px, 6vw) min(115px, 8vw);
     margin-top: 8rem;
     background-color: var(--primary-color);
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
 }
 
 footer p {
-    font-size: .90rem;
+    font-size: clamp(0.875rem, 2vw, 1rem);
     color: white;
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 1vw, 0.75rem);
+
+    @media (max-width: 768px) {
+        margin-bottom: -1rem;
+    }
 }
 
 .myLink {
@@ -493,6 +677,10 @@ footer p {
     &:hover {
         color: var(--acent-color);
     }
+
+    @media (max-width: 768px) {
+        color: var(--acent-color);
+    }
 }
 
 @view-transition {
@@ -500,14 +688,14 @@ footer p {
 }
 
 ::view-transition-group(*) {
-    animation-duration:.5s;
+    animation-duration: .8s;
 }
 
 ::view-transition-old(root) {
-    animation: slide-out-to-left .5s forwards;
+    animation: slide-out-to-left .8s forwards;
 }
 
 ::view-transition-new(root) {
-    animation: slide-out-to-right .5s forwards;
+    animation: slide-out-to-right .8s forwards;
 }
 

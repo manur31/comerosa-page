@@ -1,22 +1,5 @@
 @import './styles.css';
 
-@view-transition {
-    navigation: auto
-}
-
-::view-transition-group(*) {
-    animation-duration:.5s;
-}
-
-::view-transition-old(root) {
-    animation: slide-out-to-left .5s forwards;
-}
-
-::view-transition-new(root) {
-    animation: slide-out-to-right .5s forwards;
-}
-
-
 header {
     background-color: var(--primary-color);
 }

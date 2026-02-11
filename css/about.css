@@ -11,9 +11,11 @@ header {
 }
 
 .about-main {
+    max-width: 1440px;
     width: 100%;
     padding: 70px 115px;
     margin-top: 100px;
+    margin: 100px auto 0;
 }
 
 .about-detail {
