@@ -8,34 +8,35 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: min(2rem, 10vw);
     width: 100%;
     margin-top: 100px;
 }
 
 .slider {
-    width: 700px;
-    height: 467px;
+    width: min(1000px, 90vw);
+    height: min(500px, 40vh);
     margin: 60px auto 0 auto;
     position: relative;
     overflow: hidden;
+    border-radius: min(1rem, 2vw);
 }
 
 .slider-list {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: fit-content;
+    height: fit-content;
     display: flex;
-    width: max-content;
     transition: 1s;
     
     & img {
-        width: 100%;
-        height: 100%;
-        border-radius: 1rem;
+        width: min(1000px, 90vw);
+        height: min(500px, 40vh);
+        border-radius: min(1rem, 2vw);
         box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+        object-fit: cover;
     }
 }
 
@@ -49,10 +50,10 @@ header {
     justify-content: space-between;
 
     & button {
-        width: 32px;
-        height: 32px;
+        width: min(32px, 8vw);
+        height: min(32px, 8vw);
         border-radius: 100%;
-        background-color: #fff5;
+        background-color: rgba(174, 174, 174, 0.5);
         border: none;
         color: white;
         font-family: monospace;
@@ -69,7 +70,7 @@ header {
 
 
 .info-detail-projet {
-    width: 100%;
+    width: min(1200px, 90vw);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,15 +82,16 @@ header {
 }
 
 .info-detail-projet h2 {
-    font-size: 1.5rem;
-    margin-top: 1rem;
+    font-size: min(2rem, 8vw);
+    font-weight: 600;
+    margin: min(1rem, 2vw) 0;
+    text-align: center;
 }
 
 .info-detail-projet p {
-    font-size: 1rem;
+    font-size: min(1rem, 4vw);
     text-align: center;
-    padding: 0 300px;
-    margin-top: 16px;
+    padding: 0 min(300px, 4vw);
 }
 
 .suggested-projects {
@@ -97,18 +99,21 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: min(2rem, 2vw);
 
     & h2 {
-        font-size: 1.5rem;
-        font-weight: 500;
+        font-size: min(1.5rem, 6vw);
+        font-weight: 600;
     }
 }
 
 .moreProject-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-content: center;
     align-items: center;
     gap: 2rem;
     margin-top: 1rem;
+    width: min(1200px, 90vw);
 }
 

@@ -27,7 +27,6 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin: auto;
     width: 100%;
@@ -58,13 +57,20 @@ header {
         transition: all .3s ease;
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: 868px) {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
 }
 
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex: 1;
+}
 
 .logo {
     display: flex;
@@ -72,15 +78,49 @@ header {
     color: white;
     line-height: 1;
     text-transform: uppercase;
+    flex-grow: 1;
+    flex-basis: 0;
 }
 
-header nav {
-    display: flex; 
-    color: white;
-    
-    @media (max-width: 576px) {
-        display: none;
+.nav-menu {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+    justify-content: center;
+    gap: 1rem;
+
+    @media (max-width: 868px) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        background-color: var(--primary-color);
+        font-size: 2rem;
+        transform: translateX(100%);
+        transition: transform .9s ease-in-out;
     }
+}
+
+.open {
+    transform: translateX(-100%);
+    transition: transform .9s ease-in-out;
+}
+
+.close-menu-btn {
+    display: none;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: min(1.5rem, 5vw);
+    right: min(2rem, 5vw);
+    z-index: 10;
 }
 
 .socials {
@@ -96,7 +136,7 @@ header nav {
         color: var(--acent-color);
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: 868px) {
         display: none;
     }
 }
@@ -115,21 +155,20 @@ header nav {
     } 
 }
 
-.mobile-menu-btn {
+.menu-btn {
     display: none;
     background-color: transparent;
     color: white;
     border: none;
     cursor: pointer;
     
-    @media (max-width: 576px) {
+    @media (max-width: 868px) {
         display: block;
     }
 }
 
 .hero {
-    height: 100dvh;
-    height: 100vh;
+    height: min(100vh, 145vh);
     width: 100%;
     padding: 0 min(115px, 10vw);
     display: flex;
@@ -140,9 +179,9 @@ header nav {
 
     position: relative;
 
-    @media (max-width: 768px) {
-        padding: 0 min(24px, 5vw);
+    @media (max-width: 868px) {
         height: 145vh;
+        padding: 0 min(24px, 5vw);
     }
 }
 
@@ -158,7 +197,7 @@ header nav {
 .hero-video video {
     width: 100%;
 
-    @media (max-width: 768px) {
+    @media (max-width: 868px) {
         height: 100%;
         object-fit: cover;
         object-position: center;
@@ -302,7 +341,8 @@ header nav {
     animation-name: showRight;
     animation-fill-mode: both;
     animation-timeline: --reveal;
-    animation-range: entry 25% cover 50%;
+    animation-duration: 3s;
+    animation-range: entry 25% cover 35%;
 
     & img {
         width: 100%;
@@ -339,17 +379,18 @@ header nav {
 }
 
 .service-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    width: min(337px, 100%);
-    height: fit-content;
-    padding: min(2rem, 5vw) min(1.5rem, 2vw);
+    width: min(110vw, 100%);
+    height: min(500px, 30dvh);
     margin: 0 auto;
     background-color: #D9D9D9;
-    border-radius: 1.5rem;
+    border-radius: min(1rem, 2vw);
+    overflow: hidden;
 
     view-timeline-name: --reveal;
     animation-name: show;
@@ -360,21 +401,23 @@ header nav {
 }
 
 .service-name {
-    text-align: center;
     font-size: clamp(1rem, 1.5vw, 1rem);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    color: white;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    padding: 1rem;
 }
 
-.img-container {
-    width: 260px;
-    height: 220px;
-    border-radius: 1rem;
-    overflow: hidden;
-    
-    & img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+.services-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
 }
 
 #projects {
@@ -402,10 +445,10 @@ header nav {
 }
 
 .project-card {
-    width: 388px;
+    width: min(110vw, 100%);
     display: flex;
     flex-direction: column;
-    border-radius: 1rem;
+    border-radius: min(1rem, 2vw);
     overflow: hidden;
     margin: 0 auto;
     box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
@@ -415,6 +458,10 @@ header nav {
     animation-fill-mode: both;
     animation-timeline: --reveal;
     animation-range: entry 25% cover 50%;
+
+    @media (max-width: 768px) {
+        animation-range: entry 25% cover 40%;
+    }
 }
 
 .project-img-container {
@@ -456,8 +503,8 @@ header nav {
 }
 
 #contact {
-    max-width: 1200px;
-    width: 100%;
+    position: relative;
+    width: min(1200px, 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -465,12 +512,20 @@ header nav {
 }
 
 .contact-container {
-    width: 100%;
+    width: min(1200px, 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding-top: 100px;
+    padding: min(100px, 12vw);
+    margin: 0 auto;
+    gap: min(3rem, 12vw);
+
+    @media (max-width: 868px) {
+        flex-direction: column;
+        align-items: center;
+        padding: min(100px, 12vw);
+    }
 }
 
 .contact-info {
@@ -486,6 +541,14 @@ header nav {
     
     color: white;
     background-color: var(--secondary-color);
+
+    @media (max-width: 868px) {
+        position: relative;
+        left: 0;
+        width: 100%;
+        padding: min(5rem, 12vw);
+        border-radius: 1rem;
+    }
 }
 
 .contact-info h2 {
@@ -519,12 +582,24 @@ header nav {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    width: 798px;
-    padding: 60px 40px 60px 250px;
-    margin-left: 200px;
+    width: min(798px, 100%);
+    padding: min(60px, 20vw) min(40px, 5vw);
+    flex: .75;
+    margin-left: auto;
     border-radius: 1.5rem;
     background-color: var(--primary-color);
     color: white;
+    
+    @media (min-width: 868px) {
+        padding-left: 260px;
+    }
+
+    @media (max-width: 868px) {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        border-radius: 1rem;
+    }
 }
 
 .contact-form header {
@@ -534,14 +609,14 @@ header nav {
     align-items: start;
     position: relative;
     z-index: 1;
-    width: 70%;
+    width: min(70%, 100%);
     gap: .5rem;
     padding: 0;
 }
 
 .contact-form input, textarea, select {
     width: 70%;
-    padding: .75rem 2rem;
+    padding: min(.75rem, 3vw);
     border-radius: 1rem;
     border: none;
 }
@@ -613,7 +688,15 @@ header nav {
         &:hover {
             transform: scale(1.1);
         }
+
+
+        @media (max-width: 768px) {
+            width: 36px;
+            height: 36px;
+            padding: 8px;
+        }
     }
+
 }
 
 .chatBtn::after {
@@ -641,6 +724,34 @@ header nav {
     animation: pulse-animation 2.5s ease-in-out 2s infinite;
 }
 
+.form-success {
+    position: absolute;
+    bottom: -10px;
+    width: min(270px, 100%);
+    padding: min(20px, 6vw) min(30px, 8vw);
+    border-radius: min(1rem, 2vw);
+    background-color: green;
+    color: white;
+    text-align: center;
+    z-index: 9999999999;
+    transform: scale(0);
+    opacity: 0;
+    transition: all .3s ease;
+
+    & h2 {
+        font-size: min(.8rem, 12vw);
+    }
+
+    & p {
+        font-size: min(.8rem, 6vw);
+    }
+}
+
+.form-success.active {
+    transform: scale(1);
+    opacity: 1; 
+    bottom: 0;
+}
 
 footer {
     display: flex;
@@ -648,7 +759,7 @@ footer {
     align-items: center;
     width: 100%;
     padding: min(32px, 6vw) min(115px, 8vw);
-    margin-top: 8rem;
+    margin-top: min(8rem, .5vw);
     background-color: var(--primary-color);
     
     @media (max-width: 768px) {
@@ -667,7 +778,14 @@ footer p {
 
     @media (max-width: 768px) {
         margin-bottom: -1rem;
+        flex-direction: column;
+        gap: 0;
     }
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
 }
 
 .myLink {

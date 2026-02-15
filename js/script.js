@@ -2,7 +2,11 @@ import { projects, services } from '../resouces/lib/data.js'
 
 const serviceContainer = document.querySelector('.services-container')
 const projectContainer = document.querySelector('.projects-container')
-const $header = document.querySelector('.header')
+const $header = document.querySelector('.header')   
+const navMenu = document.querySelector('.nav-menu')
+const closeMenuBtn = document.querySelector('.close-menu-btn')
+const menuBtn = document.querySelector('.menu-btn')
+const navItem = document.querySelectorAll('.nav-item')
 
 services.forEach(service => {
     const cardService = document.createElement("article")
@@ -10,9 +14,7 @@ services.forEach(service => {
     cardService.classList.add('service-card')
 
     cardService.innerHTML = `
-        <div class="img-container">
-            <img class="services-img" src=${service.img} alt="">
-        </div>
+        <img class="services-img" src=${service.img} alt="">
         <h3 class="service-name">${service.name}</h3>
     `
 
@@ -58,5 +60,24 @@ window.addEventListener('scroll', () => {
     }
 })
 
+menuBtn.addEventListener('click', () => {
+    navMenu.style.transform = 'translateX(0%)'
+    closeMenuBtn.style.display = 'block'
+    menuBtn.style.display = 'none'
+})
 
+closeMenuBtn.addEventListener('click', () => {
+    navMenu.style.transform = 'translateX(105%)'
+    closeMenuBtn.style.display = 'none'
+    menuBtn.style.display = 'block' 
+})
 
+navItem.forEach(item => {
+    item.addEventListener('click', () => {
+        if (window.innerWidth < 868) {
+            navMenu.style.transform = 'translateX(105%)'
+            closeMenuBtn.style.display = 'none'
+            menuBtn.style.display = 'block'
+        }
+    })
+})
