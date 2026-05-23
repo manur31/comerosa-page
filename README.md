@@ -22,7 +22,7 @@ Despliegue: Netlify
 📦 Instalación local
 
 # Clona el repositorio
-git clone https://github.com/tu-usuario/comerosa-services.git
+git clone https://github.com/manur31/comerosa-services.git
 
 # Entra al proyecto
 cd comerosa-services
